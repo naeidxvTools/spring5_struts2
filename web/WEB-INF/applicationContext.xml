@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="loginService" class="net.imwork.zhanlong.service.impl.LoginServiceImpl">
+    </bean>
+
+    <!-- 这里的(也就是action中)scope一定取值prototype -->
+    <bean id="loginAction1" class="net.imwork.zhanlong.action.LoginAction" scope="prototype">
+        <property name="service" ref="loginService"/>
+    </bean>
+
+</beans>
